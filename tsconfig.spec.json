@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "alwaysStrict": true,
+        "baseUrl": "./src",
+        "esModuleInterop": true,
+        "lib": [
+            "es2020",
+            "dom"
+        ],
+        "module": "commonjs",
+        "moduleResolution": "node"
+    },
+    "include": ["./src/**/*"]
+}
