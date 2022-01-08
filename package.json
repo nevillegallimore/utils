@@ -1,5 +1,5 @@
 {
-    "name": "utils",
+    "name": "@nevillegallimore/utils",
     "description": "Library of shared utility functions",
     "author": "Neville Gallimore <neville.gallimore@gmail.com>",
     "license": "ISC",
