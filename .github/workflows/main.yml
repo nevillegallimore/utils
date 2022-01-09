@@ -3,11 +3,10 @@ name: Utils CI
 on:
   push:
     branches: [main]
-  pull-request:
+  pull_request:
     branches: '*'
 
 jobs:
-
   unit-test:
     runs-on: ubuntu-latest
     steps:
