@@ -1,12 +1,14 @@
-name: Package Deployment
+name: Utils CI
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull-request:
+    branches: '*'
 
 jobs:
-  publish-gpr:
+
+  unit-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -17,8 +19,20 @@ jobs:
           scope: '@nevillegallimore'
       - run: npm install
       - run: npm run test
-      - run: npm build
-      - run: npm publish
+
+  publish:
+    if: ${{ github.ref == 'refs/head/main' }}
+    runs-on: ubuntu-latest
+    needs: [unit-test]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registrty-url: https://npm.pkg.github.com/
+          scope: '@nevillegallimore'
+      - run: npm install
+      - run: npm run build
+      - run: npm run semantic-release
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-
