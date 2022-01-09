@@ -28,7 +28,7 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 14
-          registrty-url: https://npm.pkg.github.com/
+          registry-url: https://npm.pkg.github.com/
           scope: '@nevillegallimore'
       - run: npm install
       - run: npm run build
