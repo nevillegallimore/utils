@@ -1,0 +1,23 @@
+{
+    "compilerOptions": {
+        "alwaysStrict": true,
+        "esModuleInterop": true,
+        "lib": [
+            "dom",
+            "esnext"
+        ],
+        "module": "nodenext",
+        "moduleResolution": "nodenext",
+        "resolveJsonModule": true,
+        "strict": true,
+        "target": "es2020"
+    },
+    "exclude": [
+        "node_modules/**",
+        "lib/**/*.spec.ts"
+    ],
+    "include": [
+        "lib/**/*.json",
+        "lib/**/*.ts"
+    ]
+}
